@@ -70,7 +70,7 @@ fun encode(origin: String?): String? {
     return origin?.let {
         try {
             byteArrayToHexString(
-                MessageDigest.getInstance("MD5").digest(String().toByteArray(charset("UTF-8")))
+                MessageDigest.getInstance("MD5").digest(it.toByteArray(charset("UTF-8")))
             )
         } catch (var2: Exception) {
             null

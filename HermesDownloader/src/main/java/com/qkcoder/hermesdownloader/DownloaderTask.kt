@@ -1,6 +1,7 @@
 package com.qkcoder.hermesdownloader
 
 import android.os.Environment
+import android.util.Log
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -31,6 +32,8 @@ class DownloaderTask(
     ): File? {
         val md5FileKey = encode(fileKey)
         val fileName = "$md5FileKey.$fileExtensionName"
+
+        Log.d("DownloaderBug", "fileName:$fileName")
         var dirFile = File(
             Environment.getExternalStorageDirectory(),
             "HermesDownloader/file/"

@@ -7,47 +7,71 @@
     android:layout_margin="10dp"
     android:padding="10dp">
 
-    <TextView
-        android:id="@+id/title_item_download_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxEms="10"
-        android:maxLines="1"
-        android:textColor="#333333"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="下载1" />
-
-    <TextView
-        android:id="@+id/btn_item_download_list"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center"
-        android:text="下载"
-        android:textColor="#ffffff"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
-
-    <ProgressBar
-        android:id="@+id/progressbar_item_download_list"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_download"
         android:layout_width="0dp"
-        android:layout_height="4dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:max="100"
-        android:progress="20"
-        android:progressDrawable="@drawable/layer_progressbar_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_item_download_list"
-        app:layout_constraintStart_toEndOf="@id/title_item_download_list"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title_item_download_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="下载1" />
+
+        <TextView
+            android:id="@+id/btn_item_download_list"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="下载"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <ProgressBar
+            android:id="@+id/progressbar_item_download_list"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:max="100"
+            android:progress="20"
+            android:progressDrawable="@drawable/layer_progressbar_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_item_download_list"
+            app:layout_constraintStart_toEndOf="@id/title_item_download_list"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/img_item_download_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="w,9:16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_download"
+        tools:src="@mipmap/ic_launcher"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

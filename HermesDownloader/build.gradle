@@ -42,5 +42,12 @@ dependencies {
     api deps.multidex
     api deps.constraintLayout
     api deps.recyclerview
-
 }
+
+
+ext {
+    PUBLISH_GROUP_ID = "com.qkcoder.hermesdownloader"
+    PUBLISH_ARTIFACT_ID = 'HermesDownloader'
+    PUBLISH_VERSION = '0.0.1'
+}
+apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"

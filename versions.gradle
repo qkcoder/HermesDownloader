@@ -29,12 +29,16 @@ ext {
             relink          : '1.4.1',
             slf4j           : '1.7.30',
             okhttp          : '5.0.0-alpha.2',
-            okio            : '3.0.0-alpha.5'
+            okio            : '3.0.0-alpha.5',
+            rxpermissions   : '0.12',
+            rxJava          : '3.0.13-RC2',
+            rxAndroid       : '3.0.0'
     ]
 
     plugs = [
-            "agp"   : "com.android.tools.build:gradle:4.2.0-rc01",
-            "kotlin": "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+            "agp"              : "com.android.tools.build:gradle:4.2.0-rc01",
+            "kotlin"           : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+            "dokkaGradlePlugin": "org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2"
     ]
 
     deps = [
@@ -68,7 +72,9 @@ ext {
             relink         : "com.getkeepsafe.relinker:relinker:${versions.relink}",
             slf4j          : "org.slf4j:slf4j-android:${versions.slf4j}",
             okhttp         : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
-            okio           : "com.squareup.okio:okio:${versions.okio}"
-
+            okio           : "com.squareup.okio:okio:${versions.okio}",
+            rxpermissions  : "com.github.tbruyelle:rxpermissions:${versions.rxpermissions}",
+            rxJava         : "io.reactivex.rxjava3:rxjava:${versions.rxJava}",
+            rxAndroid      : "io.reactivex.rxjava3:rxandroid:${versions.rxAndroid}"
     ]
 }

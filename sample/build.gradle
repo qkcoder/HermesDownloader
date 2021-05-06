@@ -45,6 +45,10 @@ dependencies {
     implementation deps.recyclerview
 
     implementation thirdLib.fastAdapter
+    implementation thirdLib.rxpermissions
+    implementation thirdLib.rxJava
+    implementation thirdLib.rxAndroid
+    implementation thirdLib.glide
 
     implementation project(':HermesDownloader')
 }
