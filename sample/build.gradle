@@ -3,24 +3,64 @@ plugins {
     id 'kotlin-android'
 }
 
+
+ext["signingUsername"] = ''
+ext["signingPassword"] = ''
+
+
+File secretPropsFile = project.rootProject.file('password.properties')
+if (secretPropsFile.exists()) {
+    println "Found password props file, loading props"
+    Properties p = new Properties()
+    p.load(new FileInputStream(secretPropsFile))
+    p.each { name, value ->
+        ext[name] = value
+    }
+} else {
+    println "No password file, loading env vars"
+}
+
 android {
     compileSdkVersion versions.compileSdk
     defaultConfig {
-        applicationId "com.qkcoder.hermesdownloadersample"
+        applicationId "io.github.qkcoder.hermesdownloadersample"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        signingConfigs {
+            release {
+                storeFile file('../keystore/hermesdownloader.jks')
+                storePassword signingPassword
+                keyAlias signingUsername
+                keyPassword signingPassword
+            }
+            debug {
+                storeFile file('../keystore/hermesdownloader.jks')
+                storePassword signingPassword
+                keyAlias signingUsername
+                keyPassword signingPassword
+            }
+        }
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -50,5 +90,6 @@ dependencies {
     implementation thirdLib.rxAndroid
     implementation thirdLib.glide
 
-    implementation project(':HermesDownloader')
+    debugImplementation project(':HermesDownloader')
+    releaseImplementation 'io.github.qkcoder:HermesDownloader:0.0.1'
 }

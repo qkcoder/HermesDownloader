@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qkcoder.hermesdownloader">
+    package="io.github.qkcoder.hermesdownloader">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application>
 
         <provider
             android:name=".HermesDownloaderInitiator"
-            android:authorities="com.qkcoder.hermesdownloader"
+            android:authorities="qkcoder.hermesdownloader"
             android:exported="false" />
     </application>
 </manifest>

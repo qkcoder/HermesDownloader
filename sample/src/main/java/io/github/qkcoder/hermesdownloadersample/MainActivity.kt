@@ -1,9 +1,8 @@
-package com.qkcoder.hermesdownloadersample
+package io.github.qkcoder.hermesdownloadersample
 
 import android.Manifest
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.adapters.ItemAdapter
 import com.mikepenz.fastadapter.listeners.ClickEventHook
-import com.qkcoder.hermesdownloader.HermesDownloader
-import com.qkcoder.hermesdownloader.HermesDownloaderListener
+import io.github.qkcoder.hermesdownloader.HermesDownloader
+import io.github.qkcoder.hermesdownloader.HermesDownloaderListener
 import com.tbruyelle.rxpermissions3.RxPermissions
 
 class MainActivity : AppCompatActivity() {

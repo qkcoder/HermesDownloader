@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
 }
 
+
 android {
     compileSdkVersion versions.compileSdk
 
@@ -14,6 +15,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
     }
 
     buildTypes {
@@ -44,10 +46,12 @@ dependencies {
     api deps.recyclerview
 }
 
-
 ext {
-    PUBLISH_GROUP_ID = "com.qkcoder.hermesdownloader"
+    PUBLISH_GROUP_ID = "io.github.qkcoder"
     PUBLISH_ARTIFACT_ID = 'HermesDownloader'
     PUBLISH_VERSION = '0.0.1'
 }
 apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"
+
+
+

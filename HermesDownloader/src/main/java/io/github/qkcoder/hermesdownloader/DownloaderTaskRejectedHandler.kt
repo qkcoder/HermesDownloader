@@ -1,4 +1,4 @@
-package com.qkcoder.hermesdownloader
+package io.github.qkcoder.hermesdownloader
 
 import java.util.concurrent.RejectedExecutionHandler
 import java.util.concurrent.ThreadPoolExecutor

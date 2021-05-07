@@ -1,4 +1,4 @@
-package com.qkcoder.hermesdownloader
+package io.github.qkcoder.hermesdownloader
 
 import android.os.Environment
 import android.util.Log
