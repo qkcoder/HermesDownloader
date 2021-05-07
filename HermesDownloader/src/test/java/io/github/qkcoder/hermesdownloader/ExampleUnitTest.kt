@@ -1,4 +1,4 @@
-package com.qkcoder.hermesdownloadersample
+package io.github.qkcoder.hermesdownloader
 
 import org.junit.Test
 

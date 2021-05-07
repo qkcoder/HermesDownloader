@@ -8,60 +8,37 @@ HermesDownloader is a suitable for the Android platform of the top speed downloa
 
 ```Kotlin
 HermesDownloader.getInstance().startDownloadTask(
-                        "position$position",
-                        item.getUrl() ?: "",
-                        object : HermesDownloaderListener {
-                            override fun onSuccess(
-                                fileKey: String,
-                                cachePath: String,
-                                errorCode: Int
-                            ) {
-                                runOnUiThread {
-                                    Toast.makeText(
-                                        this@MainActivity,
-                                        "下载成功",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                    item.setCachePath(cachePath)
-                                    fastAdapter.notifyAdapterDataSetChanged()
-
-                                    Log.d(TAG, "fileKey:$fileKey,cachePath:$cachePath")
-                                }
-                            }
-
-                            override fun onFailed(fileKey: String, errorCode: Int) {
-                                runOnUiThread {
-                                    Toast.makeText(
-                                        this@MainActivity,
-                                        "下载失败",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-
-                            }
-
-                            override fun onPause(fileKey: String) {
-                            }
-
-                            override fun onCancel(fileKey: String) {
-                            }
-
-                            override fun onProgress(
-                                fileKey: String,
-                                downloadLength: Long,
-                                totalLength: Long
-                            ) {
-                            
-                            }
-                        }
-                    )
+  "fileKey",
+  "fileUrl",
+  object : HermesDownloaderListener {
+          override fun onSuccess(fileKey: String,
+                                 cachePath: String,
+                                 errorCode: Int) {
+            
+          }
+    
+          override fun onFailed(fileKey: String, errorCode: Int) {
+          }
+          
+          override fun onPause(fileKey: String) {
+          }
+    
+          override fun onCancel(fileKey: String) {
+          }
+          
+          override fun onProgress(fileKey: String,
+                                  downloadLength: Long,
+                                  totalLength: Long ) {
+          }
+  }
+)
 ```
 
 
 
 ## Releases
 
-The lateset release is available on Maven Central.
+The lateset release is available on [Maven Central](https://search.maven.org/).
 
 ```groovy
 implementation 'io.github.qkcoder:HermesDownloader:0.0.1'
